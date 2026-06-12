@@ -3,7 +3,7 @@
 
 ---
 
-## 🛠 Технологічний стек
+## Технологічний стек
 
 * **Game Client:** Unity 2D (C#) — реалізація ігрового інтерфейсу, рендерингу, обробки введення та візуалізації дій.
 * **Game Server:** Java 17+ / Spring Boot — авторитативна логіка, керування підключеннями, лобі, ігровими сесіями та валідацією дій користувачів.
@@ -12,7 +12,7 @@
 
 ---
 
-## 📁 Структура репозиторію
+## Структура репозиторію
 
 * `/rts-game` — Корінь клієнтського проекту розробки на Unity.
 * `/rts-server` — Корінь проекту Java Spring Boot сервера (включає Maven Wrapper).
@@ -20,11 +20,11 @@
 
 ---
 
-## 🚀 Швидкий запуск (Quick Start)
+## Швидкий запуск (Quick Start)
 
 Проект повністю автоматизовано. Вам не потрібно вручну встановлювати та налаштовувати СУБД MySQL у вашій операційній системі.
 
-### 📋 Попередні вимоги
+### Попередні вимоги
 
 Перед початком розгортання переконайтеся, що у вас встановлені:
 1. **Git** (версії 2.30+)
@@ -37,22 +37,22 @@
 
 Для створення та запуску контейнера бази даних відкрийте термінал у корені проекту (`Tiny-Kingdoms`) та виконайте команду:
 
-### bash скрипт
-docker compose up -d
+bash: *docker compose up -d*
 
-Контейнер автоматично розгорне MySQL версії 8.0, створить схему даних rts_game та прокине порт 3306 на локальний хост.
+Контейнер автоматично розгорне **MySQL** версії 8.0, створить схему даних rts_game та прокине порт **3306** на локальний хост.
 
 ### Крок 2: Запуск ігрового сервера (Spring Boot)
 Перейдіть до каталогу сервера та запустіть його через вбудований Maven Wrapper:
 
-На Windows (PowerShell / CMD):
-    1. cd rts-server
-    2. ./mvnw spring-boot:run
-На Linux / macOS:
-    1. cd rts-server
-    2. ./mvnw spring-boot:run
+**На Windows (PowerShell / CMD):**
+- *cd rts-server*
+- *./mvnw spring-boot:run*
 
-Після успішної ініціалізації вбудований Tomcat запуститься на порті 8080 (HTTP), а ігровий TCP-сервер почне слухати вхідні підключення клієнтів на порті 7777.
+**На Linux / macOS:**
+- *cd rts-server*
+- *./mvnw spring-boot:run*
+
+Після успішної ініціалізації вбудований **Tomcat** запуститься на порті **8080** (HTTP), а ігровий TCP-сервер почне слухати вхідні підключення клієнтів на **порті 7777**.
 
 ### Крок 3: Запуск клієнта гри (Unity)
 
@@ -65,7 +65,7 @@ docker compose up -d
 ### Параметри підключення за замовчуванням
 Локальний конфігураційний файл сервера application.properties автоматично узгоджений із деплоєм через Docker Compose:
 
-JDBC URL: jdbc:mysql://localhost:3306/rts_game?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-Username: rts-game
-Password: root
-TCP Server Port: 7777
+- JDBC URL: jdbc:mysql://localhost:3306/rts_game?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+- Username: rts-game
+- Password: root
+- TCP Server Port: 7777
